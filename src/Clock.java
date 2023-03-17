@@ -127,12 +127,14 @@ public class Clock {
     public void addHours(int hours){
         this.hours+=hours % MINUTESINHOUR;
         this.dayOfMonth+=hours /HOURSINDAY;
+        checkHours();
     }
     public void addHours(double hours){
         this.dayOfMonth+=hours /HOURSINDAY;
         this.hours+=hours % MINUTESINHOUR;
         double mins = (hours - (int)hours);
         this.minutes = (int) (MINUTESINHOUR * mins);
+        checkHours();
 
     }
     public String getTime(){
